@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Milano Cortina 2026 - Medal Table</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0a1628;
+    --navy-light: #111f38;
+    --navy-mid: #162a4a;
+    --accent-red: #e63946;
+    --accent-blue: #0ea5e9;
+    --accent-teal: #2dd4bf;
+    --gold: #fbbf24;
+    --silver: #cbd5e1;
+    --bronze: #d97706;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --border: rgba(255,255,255,0.06);
+    --glass: rgba(255,255,255,0.04);
+    --glass-hover: rgba(255,255,255,0.07);
+    --eu-blue: #003399;
+    --eu-bg: rgba(0,51,153,0.15);
+  }
+
+  body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--navy);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Decorative Vibes background */
+  .vibes-bg {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .vibes-bg svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  .content-wrap {
+    position: relative;
+    z-index: 1;
+  }
+
+  .container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Header */
+  header {
+    text-align: center;
+    padding: 60px 24px 20px;
+    position: relative;
+  }
+
+  .logo-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .logo-26 {
+    font-size: 64px;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent-red), #f97316, var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -3px;
+    line-height: 1;
+  }
+
+  .rings-svg {
+    width: 80px;
+    height: 36px;
+  }
+
+  header h1 {
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+
+  header h1 span {
+    font-weight: 300;
+    color: var(--text-secondary);
+  }
+
+  header .subtitle {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+  }
+
+  header .subtitle .live-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: var(--accent-red);
+    border-radius: 50%;
+    margin-right: 6px;
+    animation: pulse 2s ease-in-out infinite;
+    vertical-align: middle;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  /* Segmented Control */
+  .controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-top: 8px;
+  }
+
+  .segmented {
+    display: inline-flex;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 4px;
+    position: relative;
+    backdrop-filter: blur(12px);
+  }
+
+  .segmented button {
+    position: relative;
+    z-index: 1;
+    padding: 10px 28px;
+    border: none;
+    background: transparent;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-radius: 9px;
+    transition: color 0.25s ease;
+    user-select: none;
+  }
+
+  .segmented button.active {
+    color: #fff;
+  }
+
+  .segmented .slider {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    height: calc(100% - 8px);
+    background: linear-gradient(135deg, var(--accent-red), #c02534);
+    border-radius: 9px;
+    box-shadow: 0 2px 8px rgba(230,57,70,0.3);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+  }
+
+  /* Table Card */
+  .table-card {
+    background: var(--navy-light);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 48px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.03) inset;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  thead th {
+    position: sticky;
+    top: 0;
+    background: var(--navy-mid);
+    padding: 14px 16px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+    transition: color 0.2s;
+    z-index: 10;
+  }
+
+  thead th:hover {
+    color: var(--text-secondary);
+  }
+
+  thead th.active {
+    color: var(--accent-blue);
+  }
+
+  thead th .sort-arrow {
+    display: inline-block;
+    margin-left: 4px;
+    opacity: 0;
+    transition: opacity 0.2s, transform 0.2s;
+    font-size: 9px;
+  }
+
+  thead th.active .sort-arrow {
+    opacity: 1;
+  }
+
+  thead th.asc .sort-arrow {
+    transform: rotate(180deg);
+  }
+
+  th.col-rank { width: 52px; text-align: center; }
+  th.col-medal { width: 76px; text-align: center; }
+  th.col-total { width: 76px; text-align: center; }
+  th.col-pop { text-align: right; }
+  th.col-percap { text-align: right; }
+
+  tbody tr {
+    transition: background 0.2s ease;
+    cursor: default;
+  }
+
+  tbody tr:hover {
+    background: var(--glass-hover);
+  }
+
+  tbody tr:not(:last-child) td {
+    border-bottom: 1px solid var(--border);
+  }
+
+  td {
+    padding: 13px 16px;
+    font-size: 14px;
+    font-weight: 400;
+    vertical-align: middle;
+  }
+
+  td.col-rank {
+    text-align: center;
+    font-weight: 600;
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+
+  td.col-country {
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  td.col-country .flag {
+    font-size: 22px;
+    line-height: 1;
+  }
+
+  td.col-country .name {
+    white-space: nowrap;
+  }
+
+  td.col-medal {
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+    font-weight: 500;
+  }
+
+  td.col-total {
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  td.col-pop, td.col-percap {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+
+  td.col-percap {
+    font-weight: 600;
+    color: var(--text-secondary);
+  }
+
+  /* Medal dots */
+  .medal-val {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .medal-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+  }
+
+  .medal-dot.gold { background: var(--gold); box-shadow: 0 0 6px rgba(251,191,36,0.5); }
+  .medal-dot.silver { background: var(--silver); box-shadow: 0 0 6px rgba(203,213,225,0.3); }
+  .medal-dot.bronze { background: var(--bronze); box-shadow: 0 0 6px rgba(217,119,6,0.4); }
+
+  /* EU Row */
+  tr.eu-row {
+    background: var(--eu-bg);
+    cursor: pointer;
+  }
+
+  tr.eu-row:hover {
+    background: rgba(0,51,153,0.22);
+  }
+
+  tr.eu-row td {
+    font-weight: 600;
+    border-bottom: 1px solid rgba(0,51,153,0.3) !important;
+  }
+
+  tr.eu-row td.col-country .name {
+    color: #60a5fa;
+  }
+
+  tr.eu-row td.col-country .eu-expand {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(96,165,250,0.2);
+    border: 1px solid rgba(96,165,250,0.3);
+    color: #60a5fa;
+    font-size: 10px;
+    font-weight: 700;
+    transition: transform 0.3s ease, background 0.2s;
+    flex-shrink: 0;
+    margin-left: 6px;
+  }
+
+  tr.eu-row:hover td.col-country .eu-expand {
+    background: rgba(96,165,250,0.3);
+  }
+
+  tr.eu-row.expanded td.col-country .eu-expand {
+    transform: rotate(90deg);
+  }
+
+  /* EU sub-rows */
+  tr.eu-sub {
+    background: rgba(0,51,153,0.08);
+  }
+
+  tr.eu-sub:hover {
+    background: rgba(0,51,153,0.14);
+  }
+
+  tr.eu-sub td {
+    border-left: 3px solid #3b82f6;
+    font-size: 13px;
+    padding: 10px 16px;
+    color: var(--text-secondary);
+  }
+
+  tr.eu-sub td.col-country {
+    padding-left: 40px;
+  }
+
+  tr.eu-sub td.col-rank {
+    color: var(--text-muted);
+  }
+
+  /* Power row styling */
+  tr.power-row td {
+    font-weight: 600;
+  }
+
+  tr.power-row.power-us {
+    background: rgba(14,165,233,0.08);
+  }
+
+  tr.power-row.power-us:hover {
+    background: rgba(14,165,233,0.14);
+  }
+
+  tr.power-row.power-cn {
+    background: rgba(230,57,70,0.08);
+  }
+
+  tr.power-row.power-cn:hover {
+    background: rgba(230,57,70,0.14);
+  }
+
+  /* Dimmed EU countries in main table */
+  tr.eu-member-dimmed {
+    opacity: 0.4;
+  }
+
+  tr.eu-member-dimmed:hover {
+    opacity: 0.7;
+  }
+
+  /* Hidden */
+  tr.hidden-row {
+    display: none;
+  }
+
+  /* Per capita bar */
+  .percap-bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+
+  .percap-bar .bar {
+    height: 3px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--accent-blue), var(--accent-teal));
+    transition: width 0.5s ease;
+    opacity: 0.7;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 24px;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+  }
+
+  footer a {
+    color: var(--accent-blue);
+    text-decoration: none;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    header h1 { font-size: 28px; }
+    .logo-26 { font-size: 44px; }
+    .rings-svg { width: 56px; height: 25px; }
+    header { padding: 40px 16px 16px; }
+    .container { padding: 0 12px; }
+    td, th { padding: 10px 8px; font-size: 12px; }
+    td.col-country .flag { font-size: 18px; }
+    th.col-pop, td.col-pop { display: none; }
+    .percap-bar .bar { display: none; }
+    tr.eu-sub td.col-country { padding-left: 24px; }
+  }
+
+  @media (max-width: 480px) {
+    th.col-percap, td.col-percap { display: none; }
+    .percap-bar { display: none; }
+    header h1 { font-size: 22px; }
+    .logo-26 { font-size: 36px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Decorative flowing curves inspired by "Vibes" visual identity -->
+<div class="vibes-bg">
+  <svg viewBox="0 0 1440 900" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#e63946" stop-opacity="0.08"/>
+        <stop offset="100%" stop-color="#f97316" stop-opacity="0.02"/>
+      </linearGradient>
+      <linearGradient id="g2" x1="100%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.06"/>
+        <stop offset="100%" stop-color="#2dd4bf" stop-opacity="0.02"/>
+      </linearGradient>
+      <linearGradient id="g3" x1="0%" y1="50%" x2="100%" y2="50%">
+        <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.04"/>
+        <stop offset="100%" stop-color="#e63946" stop-opacity="0.03"/>
+      </linearGradient>
+    </defs>
+    <!-- Flowing curves -->
+    <path d="M0,200 C200,100 400,300 720,180 S1100,350 1440,250" stroke="url(#g1)" stroke-width="2" fill="none"/>
+    <path d="M0,400 C300,300 500,500 720,380 S1000,500 1440,400" stroke="url(#g2)" stroke-width="1.5" fill="none"/>
+    <path d="M0,600 C200,500 600,700 900,550 S1200,650 1440,580" stroke="url(#g3)" stroke-width="2" fill="none"/>
+    <!-- Subtle filled shapes -->
+    <path d="M-100,0 C200,200 400,50 700,150 S1200,0 1540,100 L1540,0 Z" fill="url(#g1)"/>
+    <path d="M-100,900 C300,700 600,850 900,750 S1200,850 1540,800 L1540,900 Z" fill="url(#g2)"/>
+    <!-- Dotted accent lines -->
+    <line x1="0" y1="300" x2="1440" y2="350" stroke="rgba(230,57,70,0.04)" stroke-width="1" stroke-dasharray="4,8"/>
+    <line x1="0" y1="500" x2="1440" y2="460" stroke="rgba(14,165,233,0.04)" stroke-width="1" stroke-dasharray="4,8"/>
+  </svg>
+</div>
+
+<div class="content-wrap">
+
+<header>
+  <div class="logo-mark">
+    <span class="logo-26">26</span>
+    <!-- Olympic Rings SVG -->
+    <svg class="rings-svg" viewBox="0 0 100 45" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="16" cy="16" r="12" fill="none" stroke="#0081C8" stroke-width="2.5"/>
+      <circle cx="38" cy="16" r="12" fill="none" stroke="#000" stroke-width="2.5" opacity="0.5"/>
+      <circle cx="60" cy="16" r="12" fill="none" stroke="#EE334E" stroke-width="2.5"/>
+      <circle cx="27" cy="28" r="12" fill="none" stroke="#FCB131" stroke-width="2.5"/>
+      <circle cx="49" cy="28" r="12" fill="none" stroke="#00A651" stroke-width="2.5"/>
+    </svg>
+  </div>
+  <h1>Milano Cortina <span>2026</span></h1>
+  <p class="subtitle"><span class="live-dot"></span>Medal Table &middot; 68 of 116 events &middot; Feb 16, 2026</p>
+</header>
+
+<div class="container">
+  <div class="controls">
+    <div class="segmented" id="segmented">
+      <div class="slider" id="slider"></div>
+      <button class="active" data-mode="nations">Nations</button>
+      <button data-mode="powers">Powers</button>
+    </div>
+  </div>
+
+  <div class="table-card">
+    <table>
+      <thead>
+        <tr>
+          <th class="col-rank" data-sort="rank">#<span class="sort-arrow">&#9660;</span></th>
+          <th class="col-country" data-sort="name">Country<span class="sort-arrow">&#9660;</span></th>
+          <th class="col-medal" data-sort="gold">Gold<span class="sort-arrow">&#9660;</span></th>
+          <th class="col-medal" data-sort="silver">Silver<span class="sort-arrow">&#9660;</span></th>
+          <th class="col-medal" data-sort="bronze">Bronze<span class="sort-arrow">&#9660;</span></th>
+          <th class="col-total" data-sort="total">Total<span class="sort-arrow">&#9660;</span></th>
+          <th class="col-pop" data-sort="population">Population<span class="sort-arrow">&#9660;</span></th>
+          <th class="col-percap" data-sort="perCapita">Per Million<span class="sort-arrow">&#9660;</span></th>
+        </tr>
+      </thead>
+      <tbody id="medalTable"></tbody>
+    </table>
+  </div>
+</div>
+
+<footer>
+  Data from <a href="https://www.olympics.com/en/milano-cortina-2026/medals" target="_blank">olympics.com</a>
+  &middot; Population figures approximate
+  &middot; Per Million = total medals per 1M inhabitants
+</footer>
+
+</div><!-- end content-wrap -->
+
+<script>
+const countries = [
+  { name:"Norway", code:"NOR", flag:"\u{1F1F3}\u{1F1F4}", gold:12, silver:7, bronze:7, total:26, population:5500000, isEU:false },
+  { name:"Italy", code:"ITA", flag:"\u{1F1EE}\u{1F1F9}", gold:8, silver:4, bronze:10, total:22, population:58900000, isEU:true },
+  { name:"United States", code:"USA", flag:"\u{1F1FA}\u{1F1F8}", gold:5, silver:8, bronze:4, total:17, population:335000000, isEU:false },
+  { name:"Japan", code:"JPN", flag:"\u{1F1EF}\u{1F1F5}", gold:3, silver:5, bronze:9, total:17, population:123000000, isEU:false },
+  { name:"France", code:"FRA", flag:"\u{1F1EB}\u{1F1F7}", gold:4, silver:7, bronze:4, total:15, population:68200000, isEU:true },
+  { name:"Germany", code:"GER", flag:"\u{1F1E9}\u{1F1EA}", gold:4, silver:6, bronze:5, total:15, population:84500000, isEU:true },
+  { name:"Austria", code:"AUT", flag:"\u{1F1E6}\u{1F1F9}", gold:4, silver:6, bronze:3, total:13, population:9200000, isEU:true },
+  { name:"Sweden", code:"SWE", flag:"\u{1F1F8}\u{1F1EA}", gold:5, silver:5, bronze:1, total:11, population:10500000, isEU:true },
+  { name:"Netherlands", code:"NED", flag:"\u{1F1F3}\u{1F1F1}", gold:5, silver:5, bronze:1, total:11, population:17900000, isEU:true },
+  { name:"Switzerland", code:"SUI", flag:"\u{1F1E8}\u{1F1ED}", gold:4, silver:2, bronze:3, total:9, population:9000000, isEU:false },
+  { name:"Canada", code:"CAN", flag:"\u{1F1E8}\u{1F1E6}", gold:1, silver:3, bronze:5, total:9, population:40100000, isEU:false },
+  { name:"Australia", code:"AUS", flag:"\u{1F1E6}\u{1F1FA}", gold:3, silver:1, bronze:1, total:5, population:26500000, isEU:false },
+  { name:"South Korea", code:"KOR", flag:"\u{1F1F0}\u{1F1F7}", gold:1, silver:2, bronze:2, total:5, population:51700000, isEU:false },
+  { name:"Czechia", code:"CZE", flag:"\u{1F1E8}\u{1F1FF}", gold:2, silver:2, bronze:0, total:4, population:10900000, isEU:true },
+  { name:"Slovenia", code:"SLO", flag:"\u{1F1F8}\u{1F1EE}", gold:2, silver:1, bronze:1, total:4, population:2100000, isEU:true },
+  { name:"China", code:"CHN", flag:"\u{1F1E8}\u{1F1F3}", gold:0, silver:2, bronze:2, total:4, population:1410000000, isEU:false },
+  { name:"Great Britain", code:"GBR", flag:"\u{1F1EC}\u{1F1E7}", gold:3, silver:0, bronze:0, total:3, population:67800000, isEU:false },
+  { name:"Finland", code:"FIN", flag:"\u{1F1EB}\u{1F1EE}", gold:0, silver:0, bronze:3, total:3, population:5600000, isEU:true },
+  { name:"Bulgaria", code:"BUL", flag:"\u{1F1E7}\u{1F1EC}", gold:0, silver:0, bronze:2, total:2, population:6500000, isEU:true },
+  { name:"Poland", code:"POL", flag:"\u{1F1F5}\u{1F1F1}", gold:0, silver:2, bronze:0, total:2, population:36800000, isEU:true },
+  { name:"Latvia", code:"LVA", flag:"\u{1F1F1}\u{1F1FB}", gold:0, silver:1, bronze:1, total:2, population:1800000, isEU:true },
+  { name:"New Zealand", code:"NZL", flag:"\u{1F1F3}\u{1F1FF}", gold:0, silver:1, bronze:1, total:2, population:5200000, isEU:false },
+  { name:"Kazakhstan", code:"KAZ", flag:"\u{1F1F0}\u{1F1FF}", gold:1, silver:0, bronze:0, total:1, population:19800000, isEU:false },
+  { name:"Brazil", code:"BRA", flag:"\u{1F1E7}\u{1F1F7}", gold:1, silver:0, bronze:0, total:1, population:216000000, isEU:false },
+  { name:"Belgium", code:"BEL", flag:"\u{1F1E7}\u{1F1EA}", gold:0, silver:0, bronze:1, total:1, population:11700000, isEU:true }
+];
+
+const euCountries = countries.filter(c => c.isEU);
+const eu = {
+  name: "European Union",
+  code: "EU",
+  flag: "\u{1F1EA}\u{1F1FA}",
+  gold: euCountries.reduce((s, c) => s + c.gold, 0),
+  silver: euCountries.reduce((s, c) => s + c.silver, 0),
+  bronze: euCountries.reduce((s, c) => s + c.bronze, 0),
+  total: euCountries.reduce((s, c) => s + c.total, 0),
+  population: euCountries.reduce((s, c) => s + c.population, 0),
+  isEU: false,
+  isEURow: true
+};
+
+let sortKey = 'gold';
+let sortDir = 'desc';
+let euExpanded = false;
+let viewMode = 'nations';
+
+function perCapita(c) {
+  return (c.total / c.population) * 1000000;
+}
+
+function formatPop(n) {
+  if (n >= 1e9) return (n / 1e9).toFixed(1) + 'B';
+  if (n >= 1e6) return (n / 1e6).toFixed(1) + 'M';
+  if (n >= 1e3) return (n / 1e3).toFixed(0) + 'K';
+  return n.toString();
+}
+
+function compare(a, b) {
+  if (sortKey === 'name') {
+    const cmp = a.name.localeCompare(b.name);
+    return sortDir === 'asc' ? cmp : -cmp;
+  }
+  if (sortKey === 'rank' || sortKey === 'gold') {
+    let d = b.gold - a.gold;
+    if (d !== 0) return sortDir === 'desc' ? d : -d;
+    d = b.silver - a.silver;
+    if (d !== 0) return sortDir === 'desc' ? d : -d;
+    d = b.bronze - a.bronze;
+    return sortDir === 'desc' ? d : -d;
+  }
+  if (sortKey === 'perCapita') {
+    const d = perCapita(b) - perCapita(a);
+    return sortDir === 'desc' ? d : -d;
+  }
+  const d = (b[sortKey] || 0) - (a[sortKey] || 0);
+  return sortDir === 'desc' ? d : -d;
+}
+
+function maxPerCapita(list) {
+  return Math.max(...list.map(c => perCapita(c)));
+}
+
+const powersMap = {
+  'EU': eu,
+  'USA': countries.find(c => c.code === 'USA'),
+  'CHN': countries.find(c => c.code === 'CHN')
+};
+
+function buildRow(c, rank, maxPC, extra) {
+  const pc = perCapita(c);
+  const barWidth = (pc / maxPC) * 80;
+  const rowClass = extra.rowClass || '';
+  const onClick = extra.onClick || '';
+
+  return `<tr class="${rowClass}" ${onClick}>
+    <td class="col-rank">${rank}</td>
+    <td class="col-country">
+      <span class="flag">${c.flag}</span>
+      <span class="name">${c.name}</span>
+      ${extra.expandBtn || ''}
+    </td>
+    <td class="col-medal"><span class="medal-val"><span class="medal-dot gold"></span>${c.gold}</span></td>
+    <td class="col-medal"><span class="medal-val"><span class="medal-dot silver"></span>${c.silver}</span></td>
+    <td class="col-medal"><span class="medal-val"><span class="medal-dot bronze"></span>${c.bronze}</span></td>
+    <td class="col-total">${c.total}</td>
+    <td class="col-pop">${formatPop(c.population)}</td>
+    <td class="col-percap">
+      <div class="percap-bar">
+        <div class="bar" style="width:${barWidth}px"></div>
+        ${pc.toFixed(2)}
+      </div>
+    </td>
+  </tr>`;
+}
+
+function render() {
+  const tbody = document.getElementById('medalTable');
+  let html = '';
+
+  if (viewMode === 'powers') {
+    const powers = [eu, powersMap['USA'], powersMap['CHN']];
+    powers.sort(compare);
+    const maxPC = maxPerCapita(powers);
+
+    for (let i = 0; i < powers.length; i++) {
+      const c = powers[i];
+      let colorClass = 'power-row';
+      if (c.code === 'USA') colorClass += ' power-us';
+      else if (c.code === 'CHN') colorClass += ' power-cn';
+      else if (c.isEURow) colorClass = 'eu-row' + (euExpanded ? ' expanded' : '');
+
+      const isEURow = c.isEURow;
+      html += buildRow(c, i + 1, maxPC, {
+        rowClass: colorClass,
+        onClick: isEURow ? 'onclick="toggleEU()"' : '',
+        expandBtn: isEURow ? '<span class="eu-expand">&#9654;</span>' : ''
+      });
+
+      if (isEURow && euExpanded) {
+        const euSorted = euCountries.slice().sort(compare);
+        for (const ec of euSorted) {
+          html += buildRow(ec, '', maxPC, { rowClass: 'eu-sub', onClick: '', expandBtn: '' });
+        }
+      }
+    }
+  } else {
+    let all = [...countries];
+    all.push(eu);
+    all.sort(compare);
+
+    const maxPC = maxPerCapita([...all, ...euCountries]);
+
+    const rankMap = new Map();
+    let r = 1;
+    const countrySorted = countries.slice().sort(compare);
+    for (let i = 0; i < countrySorted.length; i++) {
+      if (i > 0) {
+        const prev = countrySorted[i - 1];
+        const cur = countrySorted[i];
+        if (cur.gold !== prev.gold || cur.silver !== prev.silver || cur.bronze !== prev.bronze) {
+          r = i + 1;
+        }
+      }
+      rankMap.set(countrySorted[i].code, r);
+    }
+
+    for (const c of all) {
+      const isEURow = c.isEURow;
+      const isEUMember = c.isEU;
+      const cRank = isEURow ? '-' : rankMap.get(c.code);
+
+      let rowClass = '';
+      if (isEURow) {
+        rowClass = 'eu-row' + (euExpanded ? ' expanded' : '');
+      } else if (isEUMember && euExpanded) {
+        rowClass = 'eu-member-dimmed';
+      }
+
+      html += buildRow(c, cRank, maxPC, {
+        rowClass,
+        onClick: isEURow ? 'onclick="toggleEU()"' : '',
+        expandBtn: isEURow ? '<span class="eu-expand">&#9654;</span>' : ''
+      });
+
+      if (isEURow && euExpanded) {
+        const euSorted = euCountries.slice().sort(compare);
+        for (const ec of euSorted) {
+          const eRank = rankMap.get(ec.code);
+          html += buildRow(ec, eRank, maxPC, { rowClass: 'eu-sub', onClick: '', expandBtn: '' });
+        }
+      }
+    }
+  }
+
+  tbody.innerHTML = html;
+
+  document.querySelectorAll('thead th').forEach(th => {
+    const key = th.dataset.sort;
+    th.classList.remove('active', 'asc', 'desc');
+    if (key === sortKey || (sortKey === 'rank' && key === 'rank')) {
+      th.classList.add('active', sortDir);
+    }
+  });
+}
+
+function toggleEU() {
+  euExpanded = !euExpanded;
+  render();
+}
+
+document.querySelectorAll('thead th').forEach(th => {
+  th.addEventListener('click', () => {
+    const key = th.dataset.sort;
+    if (key === sortKey) {
+      sortDir = sortDir === 'desc' ? 'asc' : 'desc';
+    } else {
+      sortKey = key;
+      sortDir = key === 'name' ? 'asc' : 'desc';
+    }
+    render();
+  });
+});
+
+const segmented = document.getElementById('segmented');
+const slider = document.getElementById('slider');
+const buttons = segmented.querySelectorAll('button');
+
+function updateSlider() {
+  const activeBtn = segmented.querySelector('button.active');
+  slider.style.width = activeBtn.offsetWidth + 'px';
+  slider.style.transform = `translateX(${activeBtn.offsetLeft - 4}px)`;
+}
+
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    buttons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    viewMode = btn.dataset.mode;
+    euExpanded = false;
+    updateSlider();
+    render();
+  });
+});
+
+render();
+requestAnimationFrame(updateSlider);
+window.addEventListener('resize', updateSlider);
+</script>
+
+</body>
+</html>
