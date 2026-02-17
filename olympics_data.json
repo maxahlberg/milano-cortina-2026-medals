@@ -6,10 +6,10 @@
     {
       "name": "Norway",
       "code": "NOR",
-      "gold": 13,
+      "gold": 14,
       "silver": 8,
       "bronze": 9,
-      "total": 30,
+      "total": 31,
       "population": 5500000,
       "flag": "🇳🇴",
       "isEU": false
@@ -29,9 +29,9 @@
       "name": "United States",
       "code": "USA",
       "gold": 6,
-      "silver": 9,
+      "silver": 10,
       "bronze": 5,
-      "total": 20,
+      "total": 21,
       "population": 335000000,
       "flag": "🇺🇸",
       "isEU": false
@@ -52,8 +52,8 @@
       "code": "AUT",
       "gold": 5,
       "silver": 8,
-      "bronze": 3,
-      "total": 16,
+      "bronze": 4,
+      "total": 17,
       "population": 9200000,
       "flag": "🇦🇹",
       "isEU": true
