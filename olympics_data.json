@@ -48,6 +48,17 @@
       "isEU": true
     },
     {
+      "name": "Germany",
+      "code": "GER",
+      "gold": 5,
+      "silver": 8,
+      "bronze": 7,
+      "total": 20,
+      "population": 84500000,
+      "flag": "🇩🇪",
+      "isEU": true
+    },
+    {
       "name": "Austria",
       "code": "AUT",
       "gold": 5,
@@ -90,17 +101,6 @@
       "population": 9000000,
       "flag": "🇨🇭",
       "isEU": false
-    },
-    {
-      "name": "Germany",
-      "code": "GER",
-      "gold": 4,
-      "silver": 7,
-      "bronze": 6,
-      "total": 17,
-      "population": 84500000,
-      "flag": "🇩🇪",
-      "isEU": true
     },
     {
       "name": "Japan",
