@@ -6,10 +6,10 @@
     {
       "name": "Norway",
       "code": "NOR",
-      "gold": 14,
+      "gold": 15,
       "silver": 8,
       "bronze": 9,
-      "total": 31,
+      "total": 32,
       "population": 5500000,
       "flag": "🇳🇴",
       "isEU": false
@@ -19,8 +19,8 @@
       "code": "ITA",
       "gold": 9,
       "silver": 4,
-      "bronze": 11,
-      "total": 24,
+      "bronze": 12,
+      "total": 25,
       "population": 58900000,
       "flag": "🇮🇹",
       "isEU": true
@@ -29,9 +29,9 @@
       "name": "United States",
       "code": "USA",
       "gold": 6,
-      "silver": 10,
-      "bronze": 5,
-      "total": 21,
+      "silver": 11,
+      "bronze": 6,
+      "total": 23,
       "population": 335000000,
       "flag": "🇺🇸",
       "isEU": false
@@ -106,9 +106,9 @@
       "name": "Japan",
       "code": "JPN",
       "gold": 4,
-      "silver": 5,
+      "silver": 6,
       "bronze": 10,
-      "total": 19,
+      "total": 20,
       "population": 123000000,
       "flag": "🇯🇵",
       "isEU": false
@@ -169,6 +169,17 @@
       "isEU": true
     },
     {
+      "name": "China",
+      "code": "CHN",
+      "gold": 1,
+      "silver": 3,
+      "bronze": 3,
+      "total": 7,
+      "population": 1410000000,
+      "flag": "🇨🇳",
+      "isEU": false
+    },
+    {
       "name": "South Korea",
       "code": "KOR",
       "gold": 1,
@@ -199,17 +210,6 @@
       "total": 1,
       "population": 19800000,
       "flag": "🇰🇿",
-      "isEU": false
-    },
-    {
-      "name": "China",
-      "code": "CHN",
-      "gold": 0,
-      "silver": 3,
-      "bronze": 3,
-      "total": 6,
-      "population": 1410000000,
-      "flag": "🇨🇳",
       "isEU": false
     },
     {
