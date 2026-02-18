@@ -48,6 +48,17 @@
       "isEU": true
     },
     {
+      "name": "Netherlands",
+      "code": "NED",
+      "gold": 6,
+      "silver": 7,
+      "bronze": 2,
+      "total": 15,
+      "population": 17900000,
+      "flag": "🇳🇱",
+      "isEU": true
+    },
+    {
       "name": "Sweden",
       "code": "SWE",
       "gold": 6,
@@ -56,17 +67,6 @@
       "total": 15,
       "population": 10500000,
       "flag": "🇸🇪",
-      "isEU": true
-    },
-    {
-      "name": "Netherlands",
-      "code": "NED",
-      "gold": 6,
-      "silver": 6,
-      "bronze": 1,
-      "total": 13,
-      "population": 17900000,
-      "flag": "🇳🇱",
       "isEU": true
     },
     {
@@ -116,10 +116,10 @@
     {
       "name": "Canada",
       "code": "CAN",
-      "gold": 3,
+      "gold": 4,
       "silver": 4,
       "bronze": 6,
-      "total": 13,
+      "total": 14,
       "population": 40100000,
       "flag": "🇨🇦",
       "isEU": false
