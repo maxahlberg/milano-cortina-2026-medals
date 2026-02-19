@@ -29,9 +29,9 @@
       "name": "United States",
       "code": "USA",
       "gold": 7,
-      "silver": 11,
+      "silver": 12,
       "bronze": 6,
-      "total": 24,
+      "total": 25,
       "population": 335000000,
       "flag": "🇺🇸",
       "isEU": false
@@ -52,8 +52,8 @@
       "code": "NED",
       "gold": 6,
       "silver": 7,
-      "bronze": 2,
-      "total": 15,
+      "bronze": 3,
+      "total": 16,
       "population": 17900000,
       "flag": "🇳🇱",
       "isEU": true
@@ -125,6 +125,17 @@
       "isEU": false
     },
     {
+      "name": "China",
+      "code": "CHN",
+      "gold": 3,
+      "silver": 3,
+      "bronze": 4,
+      "total": 10,
+      "population": 1410000000,
+      "flag": "🇨🇳",
+      "isEU": false
+    },
+    {
       "name": "Australia",
       "code": "AUS",
       "gold": 3,
@@ -144,17 +155,6 @@
       "total": 3,
       "population": 67800000,
       "flag": "🇬🇧",
-      "isEU": false
-    },
-    {
-      "name": "China",
-      "code": "CHN",
-      "gold": 2,
-      "silver": 3,
-      "bronze": 4,
-      "total": 9,
-      "population": 1410000000,
-      "flag": "🇨🇳",
       "isEU": false
     },
     {
