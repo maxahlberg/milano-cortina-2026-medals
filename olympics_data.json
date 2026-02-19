@@ -15,6 +15,17 @@
       "isEU": false
     },
     {
+      "name": "United States",
+      "code": "USA",
+      "gold": 9,
+      "silver": 12,
+      "bronze": 6,
+      "total": 27,
+      "population": 335000000,
+      "flag": "🇺🇸",
+      "isEU": false
+    },
+    {
       "name": "Italy",
       "code": "ITA",
       "gold": 9,
@@ -24,17 +35,6 @@
       "population": 58900000,
       "flag": "🇮🇹",
       "isEU": true
-    },
-    {
-      "name": "United States",
-      "code": "USA",
-      "gold": 8,
-      "silver": 12,
-      "bronze": 6,
-      "total": 26,
-      "population": 335000000,
-      "flag": "🇺🇸",
-      "isEU": false
     },
     {
       "name": "France",
@@ -106,9 +106,9 @@
       "name": "Japan",
       "code": "JPN",
       "gold": 5,
-      "silver": 6,
-      "bronze": 11,
-      "total": 22,
+      "silver": 7,
+      "bronze": 12,
+      "total": 24,
       "population": 123000000,
       "flag": "🇯🇵",
       "isEU": false
