@@ -6,10 +6,10 @@
     {
       "name": "Norway",
       "code": "NOR",
-      "gold": 15,
+      "gold": 16,
       "silver": 8,
       "bronze": 10,
-      "total": 33,
+      "total": 34,
       "population": 5500000,
       "flag": "🇳🇴",
       "isEU": false
@@ -40,9 +40,9 @@
       "name": "France",
       "code": "FRA",
       "gold": 6,
-      "silver": 7,
-      "bronze": 4,
-      "total": 17,
+      "silver": 8,
+      "bronze": 5,
+      "total": 19,
       "population": 68200000,
       "flag": "🇫🇷",
       "isEU": true
@@ -70,6 +70,17 @@
       "isEU": true
     },
     {
+      "name": "Switzerland",
+      "code": "SUI",
+      "gold": 6,
+      "silver": 4,
+      "bronze": 3,
+      "total": 13,
+      "population": 9000000,
+      "flag": "🇨🇭",
+      "isEU": false
+    },
+    {
       "name": "Germany",
       "code": "GER",
       "gold": 5,
@@ -85,8 +96,8 @@
       "code": "AUT",
       "gold": 5,
       "silver": 8,
-      "bronze": 4,
-      "total": 17,
+      "bronze": 5,
+      "total": 18,
       "population": 9200000,
       "flag": "🇦🇹",
       "isEU": true
@@ -100,17 +111,6 @@
       "total": 22,
       "population": 123000000,
       "flag": "🇯🇵",
-      "isEU": false
-    },
-    {
-      "name": "Switzerland",
-      "code": "SUI",
-      "gold": 5,
-      "silver": 4,
-      "bronze": 3,
-      "total": 12,
-      "population": 9000000,
-      "flag": "🇨🇭",
       "isEU": false
     },
     {
@@ -191,6 +191,17 @@
       "isEU": true
     },
     {
+      "name": "Spain",
+      "code": "ESP",
+      "gold": 1,
+      "silver": 0,
+      "bronze": 1,
+      "total": 2,
+      "population": 47800000,
+      "flag": "🇪🇸",
+      "isEU": true
+    },
+    {
       "name": "Brazil",
       "code": "BRA",
       "gold": 1,
@@ -235,6 +246,17 @@
       "isEU": false
     },
     {
+      "name": "Finland",
+      "code": "FIN",
+      "gold": 0,
+      "silver": 1,
+      "bronze": 4,
+      "total": 5,
+      "population": 5600000,
+      "flag": "🇫🇮",
+      "isEU": true
+    },
+    {
       "name": "Latvia",
       "code": "LVA",
       "gold": 0,
@@ -255,17 +277,6 @@
       "population": 3700000,
       "flag": "🇬🇪",
       "isEU": false
-    },
-    {
-      "name": "Finland",
-      "code": "FIN",
-      "gold": 0,
-      "silver": 0,
-      "bronze": 4,
-      "total": 4,
-      "population": 5600000,
-      "flag": "🇫🇮",
-      "isEU": true
     },
     {
       "name": "Bulgaria",
