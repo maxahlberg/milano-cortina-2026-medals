@@ -30,8 +30,8 @@
       "code": "ITA",
       "gold": 9,
       "silver": 5,
-      "bronze": 12,
-      "total": 26,
+      "bronze": 13,
+      "total": 27,
       "population": 58900000,
       "flag": "🇮🇹",
       "isEU": true
@@ -39,10 +39,10 @@
     {
       "name": "Netherlands",
       "code": "NED",
-      "gold": 7,
+      "gold": 8,
       "silver": 7,
       "bronze": 3,
-      "total": 17,
+      "total": 18,
       "population": 17900000,
       "flag": "🇳🇱",
       "isEU": true
@@ -70,6 +70,17 @@
       "isEU": true
     },
     {
+      "name": "Switzerland",
+      "code": "SUI",
+      "gold": 6,
+      "silver": 6,
+      "bronze": 5,
+      "total": 17,
+      "population": 9000000,
+      "flag": "🇨🇭",
+      "isEU": false
+    },
+    {
       "name": "Sweden",
       "code": "SWE",
       "gold": 6,
@@ -79,17 +90,6 @@
       "population": 10500000,
       "flag": "🇸🇪",
       "isEU": true
-    },
-    {
-      "name": "Switzerland",
-      "code": "SUI",
-      "gold": 6,
-      "silver": 6,
-      "bronze": 4,
-      "total": 16,
-      "population": 9000000,
-      "flag": "🇨🇭",
-      "isEU": false
     },
     {
       "name": "Austria",
@@ -161,9 +161,9 @@
       "name": "South Korea",
       "code": "KOR",
       "gold": 2,
-      "silver": 2,
+      "silver": 3,
       "bronze": 3,
-      "total": 7,
+      "total": 8,
       "population": 51700000,
       "flag": "🇰🇷",
       "isEU": false
