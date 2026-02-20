@@ -37,6 +37,17 @@
       "isEU": true
     },
     {
+      "name": "Germany",
+      "code": "GER",
+      "gold": 6,
+      "silver": 8,
+      "bronze": 8,
+      "total": 22,
+      "population": 84500000,
+      "flag": "🇩🇪",
+      "isEU": true
+    },
+    {
       "name": "France",
       "code": "FRA",
       "gold": 6,
@@ -63,8 +74,8 @@
       "code": "SWE",
       "gold": 6,
       "silver": 6,
-      "bronze": 3,
-      "total": 15,
+      "bronze": 4,
+      "total": 16,
       "population": 10500000,
       "flag": "🇸🇪",
       "isEU": true
@@ -73,23 +84,12 @@
       "name": "Switzerland",
       "code": "SUI",
       "gold": 6,
-      "silver": 4,
+      "silver": 5,
       "bronze": 4,
-      "total": 14,
+      "total": 15,
       "population": 9000000,
       "flag": "🇨🇭",
       "isEU": false
-    },
-    {
-      "name": "Germany",
-      "code": "GER",
-      "gold": 5,
-      "silver": 8,
-      "bronze": 8,
-      "total": 21,
-      "population": 84500000,
-      "flag": "🇩🇪",
-      "isEU": true
     },
     {
       "name": "Austria",
