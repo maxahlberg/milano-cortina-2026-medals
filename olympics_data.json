@@ -19,8 +19,8 @@
       "code": "USA",
       "gold": 10,
       "silver": 12,
-      "bronze": 6,
-      "total": 28,
+      "bronze": 7,
+      "total": 29,
       "population": 335000000,
       "flag": "🇺🇸",
       "isEU": false
@@ -136,6 +136,17 @@
       "isEU": false
     },
     {
+      "name": "South Korea",
+      "code": "KOR",
+      "gold": 3,
+      "silver": 4,
+      "bronze": 3,
+      "total": 10,
+      "population": 51700000,
+      "flag": "🇰🇷",
+      "isEU": false
+    },
+    {
       "name": "Australia",
       "code": "AUS",
       "gold": 3,
@@ -155,17 +166,6 @@
       "total": 3,
       "population": 67800000,
       "flag": "🇬🇧",
-      "isEU": false
-    },
-    {
-      "name": "South Korea",
-      "code": "KOR",
-      "gold": 2,
-      "silver": 3,
-      "bronze": 3,
-      "total": 8,
-      "population": 51700000,
-      "flag": "🇰🇷",
       "isEU": false
     },
     {
