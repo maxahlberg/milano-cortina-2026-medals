@@ -84,9 +84,9 @@
       "name": "Switzerland",
       "code": "SUI",
       "gold": 6,
-      "silver": 5,
+      "silver": 6,
       "bronze": 4,
-      "total": 15,
+      "total": 16,
       "population": 9000000,
       "flag": "🇨🇭",
       "isEU": false
@@ -127,10 +127,10 @@
     {
       "name": "China",
       "code": "CHN",
-      "gold": 3,
+      "gold": 4,
       "silver": 3,
-      "bronze": 4,
-      "total": 10,
+      "bronze": 5,
+      "total": 12,
       "population": 1410000000,
       "flag": "🇨🇳",
       "isEU": false
