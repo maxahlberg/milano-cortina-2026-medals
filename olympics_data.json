@@ -7,9 +7,9 @@
       "name": "Norway",
       "code": "NOR",
       "gold": 17,
-      "silver": 9,
+      "silver": 10,
       "bronze": 10,
-      "total": 36,
+      "total": 37,
       "population": 5500000,
       "flag": "🇳🇴",
       "isEU": false
@@ -37,6 +37,17 @@
       "isEU": true
     },
     {
+      "name": "Netherlands",
+      "code": "NED",
+      "gold": 7,
+      "silver": 7,
+      "bronze": 3,
+      "total": 17,
+      "population": 17900000,
+      "flag": "🇳🇱",
+      "isEU": true
+    },
+    {
       "name": "Germany",
       "code": "GER",
       "gold": 6,
@@ -56,17 +67,6 @@
       "total": 20,
       "population": 68200000,
       "flag": "🇫🇷",
-      "isEU": true
-    },
-    {
-      "name": "Netherlands",
-      "code": "NED",
-      "gold": 6,
-      "silver": 7,
-      "bronze": 3,
-      "total": 16,
-      "population": 17900000,
-      "flag": "🇳🇱",
       "isEU": true
     },
     {
@@ -118,8 +118,8 @@
       "code": "CAN",
       "gold": 4,
       "silver": 5,
-      "bronze": 6,
-      "total": 15,
+      "bronze": 7,
+      "total": 16,
       "population": 40100000,
       "flag": "🇨🇦",
       "isEU": false
