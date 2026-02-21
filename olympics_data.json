@@ -30,10 +30,21 @@
       "code": "ITA",
       "gold": 10,
       "silver": 6,
-      "bronze": 13,
-      "total": 29,
+      "bronze": 14,
+      "total": 30,
       "population": 58900000,
       "flag": "🇮🇹",
+      "isEU": true
+    },
+    {
+      "name": "Netherlands",
+      "code": "NED",
+      "gold": 9,
+      "silver": 7,
+      "bronze": 3,
+      "total": 19,
+      "population": 17900000,
+      "flag": "🇳🇱",
       "isEU": true
     },
     {
@@ -45,17 +56,6 @@
       "total": 23,
       "population": 68200000,
       "flag": "🇫🇷",
-      "isEU": true
-    },
-    {
-      "name": "Netherlands",
-      "code": "NED",
-      "gold": 8,
-      "silver": 7,
-      "bronze": 3,
-      "total": 18,
-      "population": 17900000,
-      "flag": "🇳🇱",
       "isEU": true
     },
     {
@@ -118,8 +118,8 @@
       "code": "CAN",
       "gold": 4,
       "silver": 5,
-      "bronze": 8,
-      "total": 17,
+      "bronze": 9,
+      "total": 18,
       "population": 40100000,
       "flag": "🇨🇦",
       "isEU": false
@@ -265,6 +265,17 @@
       "total": 2,
       "population": 1800000,
       "flag": "🇱🇻",
+      "isEU": true
+    },
+    {
+      "name": "Denmark",
+      "code": "DEN",
+      "gold": 0,
+      "silver": 1,
+      "bronze": 0,
+      "total": 1,
+      "population": 5900000,
+      "flag": "🇩🇰",
       "isEU": true
     },
     {
