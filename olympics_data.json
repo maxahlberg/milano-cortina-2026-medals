@@ -37,6 +37,17 @@
       "isEU": true
     },
     {
+      "name": "France",
+      "code": "FRA",
+      "gold": 8,
+      "silver": 9,
+      "bronze": 6,
+      "total": 23,
+      "population": 68200000,
+      "flag": "🇫🇷",
+      "isEU": true
+    },
+    {
       "name": "Netherlands",
       "code": "NED",
       "gold": 8,
@@ -45,17 +56,6 @@
       "total": 18,
       "population": 17900000,
       "flag": "🇳🇱",
-      "isEU": true
-    },
-    {
-      "name": "France",
-      "code": "FRA",
-      "gold": 7,
-      "silver": 8,
-      "bronze": 6,
-      "total": 21,
-      "population": 68200000,
-      "flag": "🇫🇷",
       "isEU": true
     },
     {
@@ -173,8 +173,8 @@
       "code": "CZE",
       "gold": 2,
       "silver": 2,
-      "bronze": 0,
-      "total": 4,
+      "bronze": 1,
+      "total": 5,
       "population": 10900000,
       "flag": "🇨🇿",
       "isEU": true
