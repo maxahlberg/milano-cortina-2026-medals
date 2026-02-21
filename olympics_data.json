@@ -28,10 +28,10 @@
     {
       "name": "Italy",
       "code": "ITA",
-      "gold": 9,
-      "silver": 5,
+      "gold": 10,
+      "silver": 6,
       "bronze": 13,
-      "total": 27,
+      "total": 29,
       "population": 58900000,
       "flag": "🇮🇹",
       "isEU": true
@@ -48,6 +48,17 @@
       "isEU": true
     },
     {
+      "name": "France",
+      "code": "FRA",
+      "gold": 7,
+      "silver": 8,
+      "bronze": 6,
+      "total": 21,
+      "population": 68200000,
+      "flag": "🇫🇷",
+      "isEU": true
+    },
+    {
       "name": "Germany",
       "code": "GER",
       "gold": 6,
@@ -59,23 +70,12 @@
       "isEU": true
     },
     {
-      "name": "France",
-      "code": "FRA",
+      "name": "Switzerland",
+      "code": "SUI",
       "gold": 6,
       "silver": 8,
       "bronze": 6,
       "total": 20,
-      "population": 68200000,
-      "flag": "🇫🇷",
-      "isEU": true
-    },
-    {
-      "name": "Switzerland",
-      "code": "SUI",
-      "gold": 6,
-      "silver": 7,
-      "bronze": 5,
-      "total": 18,
       "population": 9000000,
       "flag": "🇨🇭",
       "isEU": false
@@ -195,8 +195,8 @@
       "code": "ESP",
       "gold": 1,
       "silver": 0,
-      "bronze": 1,
-      "total": 2,
+      "bronze": 2,
+      "total": 3,
       "population": 47800000,
       "flag": "🇪🇸",
       "isEU": true
