@@ -17,10 +17,10 @@
     {
       "name": "United States",
       "code": "USA",
-      "gold": 11,
+      "gold": 12,
       "silver": 12,
       "bronze": 9,
-      "total": 32,
+      "total": 33,
       "population": 335000000,
       "flag": "🇺🇸",
       "isEU": false
@@ -117,9 +117,9 @@
       "name": "Canada",
       "code": "CAN",
       "gold": 5,
-      "silver": 6,
+      "silver": 7,
       "bronze": 9,
-      "total": 20,
+      "total": 21,
       "population": 40100000,
       "flag": "🇨🇦",
       "isEU": false
